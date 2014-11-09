@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-
+NSString *docPath(void);
+@interface ViewController : UIViewController<UIApplicationDelegate, UITableViewDataSource>
+{
+    UITableView *taskTable;
+    UITextField *taskField;
+    UIButton *insertButton;
+    NSMutableArray *tasks;
+}
+@property (copy) NSMutableArray * tasks;
+- (void)addTask:(id)sender;
 @end
 
